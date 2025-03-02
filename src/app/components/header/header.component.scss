@@ -1,0 +1,137 @@
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+
+.navigationLinks {
+    display: flex;
+    gap: 50px;
+}
+
+.navigationLinks a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navigationLinks a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(43, 216, 131);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navigationLinks a:hover::after {
+    width: 100%;
+}
+
+.navigationLinks a.active::after {
+    width: 100%;
+    left: 50%;
+}
+
+.socialLinksRegistration h2 {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+}
+
+.Logo img {
+    max-width: 80px;
+    height: auto;
+    padding-top: 8px;
+}
+
+.firstSect {
+    max-width: 1440px;
+    height: 800px;
+    margin: auto;
+}
+
+.sideColors {
+    display: flex;
+}
+
+.firstSectLeft {
+    width: 990px;
+    height: 800px;
+    background-color: rgb(22, 28, 33);
+}
+
+.firstSectRight {
+    width: 475px;
+    height: 800px;
+    background-color: rgb(43, 216, 131);
+}
+
+
+.secondSect {
+    max-width: 1440px;
+    height: 800px;
+    margin: auto;
+    background-color: rgb(31, 39, 47);
+}
+
+.curve1 {
+    position: relative;
+    bottom: 240px;
+    z-index: 2;
+}
+
+.thirdSect {
+    max-width: 1440px;
+    height: 680px;
+    display: flex;
+    margin: auto;
+    background-color: rgb(22, 28, 33);
+}
+
+.fourthSect {
+    max-width: 1440px;
+    height: 500px;
+    display: flex;
+    margin: auto;
+    background-color: rgb(31, 39, 47);
+}
+
+.fifthSect {
+    max-width: 1440px;
+    height: 640px;
+    display: flex;
+    margin: auto;
+    background-color: rgb(22, 28, 33);
+}
+
+.curve2 {
+    position: relative;
+    top: 170px;
+    z-index: 2;
+}
+
