@@ -1,0 +1,48 @@
+.firstSect {
+    max-width: 1440px;
+    height: 800px;
+    margin: auto;
+}
+
+.backDots {
+    height: 800px;
+    background-color: rgb(43, 216, 131);
+}
+
+
+.curve1 {
+    position: relative;
+    bottom: 240px;
+    z-index: 2;
+}
+
+.secSect {
+    margin-bottom: 300px;
+    max-width: 1440px;
+    margin: auto;
+    background-color: rgb(31, 39, 47);
+    display: flex;
+    flex-direction: column;
+}
+
+.mainSection {
+    margin-top: 100px;
+    height: 1700px;
+}
+
+
+.questionsTable {
+    width: 1200px;
+    height: 1500px;
+    background-color: rgb(22, 28, 33);
+    margin: auto;
+    border-radius: 20px;
+}
+
+
+
+.curve2 {
+    position: relative;
+    top: 10px;
+    z-index: 2;
+}
