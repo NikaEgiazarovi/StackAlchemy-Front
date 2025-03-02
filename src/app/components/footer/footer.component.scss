@@ -1,0 +1,55 @@
+footer {
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: auto;
+    background-color: rgb(43, 216, 131);
+    padding: 50px;
+    text-align: center;
+}
+
+.MessageAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px; 
+    margin-top: 40px;
+    margin: auto;
+    padding-left: 130px;
+}
+
+.MessageLeft form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.MessageLeft input,
+.MessageLeft textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+.MessageLeft button {
+    background-color: rgb(31, 39, 47);
+    color: rgb(43, 216, 131);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.MessageRight {
+    background-color: rgb(31, 39, 47);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
