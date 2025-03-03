@@ -1,0 +1,16 @@
+
+<section class="question" *ngFor="let question of Questions">
+    <div class="question-stats">
+        <p>{{question.votes}} votes</p>
+        <p [ngClass]="question.answers > 0 ? 'green' : 'gray'">{{question.answers}} answers</p>
+        
+    </div>
+    <div class="question-info">
+        <h1>{{question.text}}</h1>
+        <p class="description">{{question.description}}</p>
+        <hr>
+    </div>
+
+</section>
+
+
