@@ -41,8 +41,7 @@
     height: 1500px;
     background-color: rgb(22, 28, 33);
     border-radius: 20px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    
 }
 
 .filterTable {
@@ -50,9 +49,93 @@
     position: sticky;
     top: 0px;
     background-color: rgb(22, 28, 33);
+    border-radius: 20px;
+}
+
+.innerFilterTable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding-right: 15px;
 }
 
 
+
+.dropDownMenu
+{
+    padding-right: 30px;
+    display: flex;
+    gap: 8px;
+}
+.dropDownMenu button{
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+
+
+.questionMainTable {
+    height: 90%;
+    overflow: hidden;
+}
+
+
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    // max-width: 190px;
+  }
+  
+  .input {
+    font-family: "Montserrat", sans-serif;
+    width: 400px;
+    height: 45px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 12px;
+    background-color: #16171d;
+    outline: none;
+    color: #bdbecb;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+  }
+  
+  .input::placeholder {
+    color: #bdbecb;
+  }
+  
+  .input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+  }
+  
+  .input:active {
+    transform: scale(0.95);
+  }
+  
+  .input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #bdbecb;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
 
 .curve2 {
     position: relative;
@@ -71,5 +154,6 @@ app-questions-list
    height: 100%;
    gap: 10px;
    margin-bottom: 20px;
+   overflow-y: scroll;
    
 }
