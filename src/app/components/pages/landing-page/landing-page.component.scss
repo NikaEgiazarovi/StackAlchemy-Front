@@ -12,7 +12,7 @@
 
 .curve1 {
     position: relative;
-    bottom: 240px;
+    bottom: 230px;
     z-index: 2;
 }
 
@@ -28,6 +28,11 @@
 .mainSection {
     margin-top: 100px;
     height: 1700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
 
@@ -35,10 +40,16 @@
     width: 1200px;
     height: 1500px;
     background-color: rgb(22, 28, 33);
-    margin: auto;
     border-radius: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.filterTable {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    background-color: rgb(22, 28, 33);
 }
 
 
@@ -59,5 +70,6 @@ app-questions-list
    width: 100%; 
    height: 100%;
    gap: 10px;
+   margin-bottom: 20px;
    
 }
