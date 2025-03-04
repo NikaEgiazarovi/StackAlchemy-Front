@@ -53,21 +53,46 @@
 }
 
 .innerFilterTable {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // padding-right: 15px;
+    padding: 10px;
 }
 
+.swiperFilter
+{
+  width: 20%;
+}
+swiper-container
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+swiper-slide
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
-
+.filter-img
+{
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
 .dropDownMenu
 {
     padding-right: 30px;
     display: flex;
     gap: 8px;
 }
-.dropDownMenu button{
+.filterBtn{
     background: none;
     border: none;
     color: white;
@@ -79,9 +104,11 @@
 
 
 
+
 .questionMainTable {
     height: 90%;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
@@ -154,6 +181,10 @@ app-questions-list
    height: 100%;
    gap: 10px;
    margin-bottom: 20px;
-   overflow-y: scroll;
    
+}
+
+.clickedBtn
+{
+  color: lightgreen;
 }

@@ -6,6 +6,41 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent {
+  newestFilter: boolean = false;
+  scoresFilter: boolean = false;
+  unansweredFilter: boolean = false;
+  filterImages = [
+    'assets/html.png',
+    'assets/css.png',
+    'assets/js.png',
+    'assets/ts.png',
+    'assets/angular.png',
+    'assets/scss.png',
+    'assets/c_sharp.png',
+  ];
+
+  selectFilter(filter: 'newest' | 'scores' | 'unanswered') {
+    switch (filter) {
+      case 'newest':
+        this.newestFilter = !this.newestFilter;
+        this.scoresFilter = false;
+        this.unansweredFilter = false;
+        break;
+
+      case 'scores':
+        this.scoresFilter = !this.scoresFilter;
+        this.newestFilter = false;
+        this.unansweredFilter = false;
+        break;
+
+      case 'unanswered':
+        this.unansweredFilter = !this.unansweredFilter;
+        this.scoresFilter = false;
+        this.newestFilter = false;
+        break;
+    }
+  }
+
   questionsArray = [
     {
       id: 1,

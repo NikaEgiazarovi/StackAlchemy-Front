@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -10,13 +10,17 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 
-
-
-
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, LandingPageComponent, QuestionsListComponent,],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    LandingPageComponent,
+    QuestionsListComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

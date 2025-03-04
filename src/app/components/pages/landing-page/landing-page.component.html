@@ -16,7 +16,11 @@
             <div class="filterTable">
                 <div class="innerFilterTable">
                     <div class="swiperFilter">
-                        <img src="/assets/pngwing.com (84).png" alt="" style="width: 150px; padding: 15px 15px 0px ;">
+                       <swiper-container slides-per-view="3" space-between="-10">
+                        <swiper-slide *ngFor="let image of filterImages">
+                            <img [src]="image" class="filter-img">
+                        </swiper-slide>
+                       </swiper-container>
                     </div>
 
                     <div class="searchBar">
@@ -41,9 +45,9 @@
                     </div>
 
                     <div class="dropDownMenu">
-                        <button>Newest</button>
-                        <button>Unanswered</button>
-                        <button>Score</button>
+                        <button (click)="selectFilter('newest')" [ngClass]="newestFilter ? 'clickedBtn' : ''" class="filterBtn">Newest</button>
+                        <button (click)="selectFilter('unanswered')" [ngClass]="unansweredFilter ? 'clickedBtn' : ''" class="filterBtn">Unanswered</button>
+                        <button (click)="selectFilter('scores')" [ngClass]="scoresFilter ? 'clickedBtn' : ''" class="filterBtn">Score</button>
                     </div>
                 </div>
 
