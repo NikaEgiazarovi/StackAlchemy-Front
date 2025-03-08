@@ -47,6 +47,15 @@ export class LandingPageComponent {
     'assets/scss.png',
     'assets/c_sharp.png',
   ];
+  selectedLanguage: string = '';
+
+  selectLanguage(language: string) {
+    this.selectedLanguage = language;
+  }
+
+  filterQuestions() {
+    this.dropDownMenu = false;
+  }
 
   selectFilter(filter: 'newest' | 'scores' | 'unanswered') {
     switch (filter) {

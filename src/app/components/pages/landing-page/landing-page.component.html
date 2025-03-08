@@ -14,7 +14,7 @@
             <div class="filterTable">
                 <div class="innerFilterTable">
                     <div class="swiperFilter">
-                        <swiper-container slides-per-view="2" space-between="0" [breakpoints]="swiperBreakpoints">
+                        <swiper-container class="swiper-container" slides-per-view="2" space-between="0" [breakpoints]="swiperBreakpoints">
                             <swiper-slide *ngFor="let image of filterImages">
                                 <img [src]="image" class="filter-img">
                             </swiper-slide>
@@ -56,9 +56,23 @@
                             class="filterBtnDropDown">Newest</button>
                         <button (click)="selectFilter('unanswered')" [ngClass]="unansweredFilter ? 'clickedBtn' : ''"
                             class="filterBtnDropDown">Unanswered</button>
-                        <button (click)="selectFilter('scores')" [ngClass]="scoresFilter ? 'clickedBtn' : ''"
-                            class="filterBtnDropDown">Score</button>
+                        <button (click)="selectFilter('scores')" [ngClass]="scoresFilter ? 'clickedBtn' : ''"class="filterBtnDropDown">
+                          Score
+                        </button>
+
+                        <h3>Languages:</h3>
+                        <swiper-container class="swiper-container-mobile" slides-per-view="2" space-between="0" [breakpoints]="swiperBreakpoints">
+                            <swiper-slide *ngFor="let image of filterImages">
+                                <img [src]="image" class="filter-img" (click)="selectLanguage(image)">
+                            </swiper-slide>
+                        </swiper-container>
+
+                        <h3>Selected Language:</h3>
+                         <p *ngIf="!selectedLanguage">no language filter selected.</p>
+                         <img *ngIf="selectedLanguage" [src]="selectedLanguage" class="selectedLanguage">
                        </section>
+
+                       <button class="filter" (click)="filterQuestions()">Filter</button>
                     </div>
                 </div>
 
