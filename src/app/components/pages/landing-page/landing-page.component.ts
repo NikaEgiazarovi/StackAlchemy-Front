@@ -1,11 +1,40 @@
 import { Component } from '@angular/core';
-
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
+  animations: [
+    trigger('DropDownMenuAnimation', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)', opacity: 0 }),
+        animate(
+          '0.5s ease-out',
+          style({ transform: 'translateY(0)', opacity: 1 })
+        ),
+      ]),
+
+      transition(':leave', [
+        animate(
+          '0.3s ease-in',
+          style({ transform: 'translateY(100%)', opacity: 0 })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class LandingPageComponent {
+  swiperBreakpoints = {
+    1090: { slidesPerView: 3, spaceBetween: 0 },
+  };
+
+  dropDownMenu: boolean = false;
   newestFilter: boolean = false;
   scoresFilter: boolean = false;
   unansweredFilter: boolean = false;
