@@ -311,3 +311,18 @@ app-questions-list {
 .clickedBtn {
     color: lightgreen;
 }
+
+.ask-question-header
+{
+    width: 89%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.ask-question-btn
+{
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}

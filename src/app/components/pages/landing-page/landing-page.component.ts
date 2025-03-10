@@ -6,6 +6,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -30,6 +31,7 @@ import {
   ],
 })
 export class LandingPageComponent {
+  constructor(private router: Router) {}
   swiperBreakpoints = {
     1090: { slidesPerView: 3, spaceBetween: 0 },
   };
@@ -77,6 +79,10 @@ export class LandingPageComponent {
         this.newestFilter = false;
         break;
     }
+  }
+
+  goToAskQuestion() {
+    this.router.navigate(['askQuestion']);
   }
 
   questionsArray = [
