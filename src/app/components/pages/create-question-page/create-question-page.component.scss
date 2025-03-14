@@ -166,7 +166,7 @@ input {
     font-weight: bold;
 }
 
-button {
+.addQuestBtn {
     padding: 10px 20px;
     text-transform: uppercase;
     border-radius: 8px;
@@ -183,8 +183,7 @@ button {
     width: 250px;
 }
 
-#btn:hover,
-:focus {
+.addQuestBtn:hover{
     color: #ffffff;
     background: #008cff;
     border: 1px solid #008cff;
@@ -193,7 +192,7 @@ button {
         0 0 100px #008cff;
 }
 
-#btn:active {
+.addQuestBtn:active {
     transform: scale(0.9);
 
 }
