@@ -6,18 +6,20 @@ html,body{
     box-sizing: border-box;
 }
 
-app-create-question-page
-{
+app-create-question-page{
     width: 100%;
     height: 100%;
 }
+
 app-header{
     width: 100%;
+    position: absolute;
 }
-app-footer
-{
+
+app-footer{
     width: 100%;
 }
+
  header-branch{
     background-color: red;
 }

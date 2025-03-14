@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CreateQuestionPageComponent } from './components/pages/create-question-
     QuestionsListComponent,
     CreateQuestionPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,FormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
