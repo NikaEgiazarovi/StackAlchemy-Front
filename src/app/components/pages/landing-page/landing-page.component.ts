@@ -7,27 +7,21 @@ import {
   animate,
 } from '@angular/animations';
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss',
-  animations: [
-    trigger('DropDownMenuAnimation', [
-      transition(':enter', [
-        style({ transform: 'translateY(100%)', opacity: 0 }),
-        animate(
-          '0.5s ease-out',
-          style({ transform: 'translateY(0)', opacity: 1 })
-        ),
-      ]),
-
-      transition(':leave', [
-        animate(
-          '0.3s ease-in',
-          style({ transform: 'translateY(100%)', opacity: 0 })
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'app-landing-page',
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.scss',
+    animations: [
+        trigger('DropDownMenuAnimation', [
+            transition(':enter', [
+                style({ transform: 'translateY(100%)', opacity: 0 }),
+                animate('0.5s ease-out', style({ transform: 'translateY(0)', opacity: 1 })),
+            ]),
+            transition(':leave', [
+                animate('0.3s ease-in', style({ transform: 'translateY(100%)', opacity: 0 })),
+            ]),
+        ]),
+    ],
+    standalone: false
 })
 export class LandingPageComponent {
   swiperBreakpoints = {
