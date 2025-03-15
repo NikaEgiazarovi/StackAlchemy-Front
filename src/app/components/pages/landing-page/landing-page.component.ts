@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { Router } from '@angular/router';
 @Component({
+  standalone: false,
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',

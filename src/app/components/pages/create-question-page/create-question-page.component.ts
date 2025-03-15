@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-create-question-page',
   templateUrl: './create-question-page.component.html',
   styleUrl: './create-question-page.component.scss',
