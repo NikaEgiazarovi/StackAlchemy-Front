@@ -16,14 +16,14 @@
             <div class="card_content">
                 <input type="text" class="input-field titl" placeholder="Title:" [(ngModel)]="title" />
                 <input type="text" class="input-field descript" placeholder="Description:" [(ngModel)]="description" />
-                <swiper-container class="swiper-container" slides-per-view="3" space-between="0">
+                <swiper-container class="swiper-container" slides-per-view="3" space-between="5">
                     <swiper-slide *ngFor="let image of filterImages">
                         <img [src]="image" class="filter-img" (click)="selectLanguage(image)">
                     </swiper-slide>
                 </swiper-container>
 
 
-                <div id="editor" style="height: 300px; width: 100%;"></div>
+                <div id="editor" style="height: 300px; width: 93%; border-radius: 10px;"></div>
 
                 <label for="file" class="custum-file-upload">
                     <div class="icon">

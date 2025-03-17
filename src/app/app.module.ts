@@ -11,7 +11,8 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     LandingPageComponent,
     QuestionsListComponent,
     CreateQuestionPageComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
