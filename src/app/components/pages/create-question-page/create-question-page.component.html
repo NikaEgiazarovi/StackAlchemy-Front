@@ -16,21 +16,21 @@
             <div class="card_content">
                 <input type="text" class="input-field titl" placeholder="Title:" [(ngModel)]="title" />
                 <input type="text" class="input-field descript" placeholder="Description:" [(ngModel)]="description" />
-                <swiper-container class="swiper-container" slides-per-view="3" space-between="0">
+                <swiper-container class="swiper-container" slides-per-view="3" space-between="4">
                     <swiper-slide *ngFor="let image of filterImages">
                         <img [src]="image" class="filter-img" (click)="selectLanguage(image)">
                     </swiper-slide>
                 </swiper-container>
 
 
-                <div id="editor" style="height: 300px; width: 100%;"></div>
-                
-                <div  class="current-language-container">
-                   <p *ngIf="currentLanguage">Selected Langauge:</p>
-                   <img *ngIf="currentLanguage" [src]="currentLanguage" class="currentImg">
-                   <p *ngIf="!currentLanguage">no selected languages.</p>
+                <div id="editor" style="height: 300px; width: 92%; border-radius: 10px;"></div>
+
+                <div class="current-language-container">
+                    <p *ngIf="currentLanguage">Selected Langauge:</p>
+                    <img *ngIf="currentLanguage" [src]="currentLanguage" class="currentImg">
+                    <p *ngIf="!currentLanguage">No Selected Languages.</p>
                 </div>
-               
+
 
                 <label for="file" class="custum-file-upload">
                     <div class="icon">
