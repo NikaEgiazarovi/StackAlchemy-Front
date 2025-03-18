@@ -196,3 +196,19 @@ input {
     transform: scale(0.9);
 
 }
+.current-language-container
+{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: white;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.currentImg
+{
+    width: 50px;
+    height: 50px;
+}

@@ -24,6 +24,13 @@
 
 
                 <div id="editor" style="height: 300px; width: 100%;"></div>
+                
+                <div  class="current-language-container">
+                   <p *ngIf="currentLanguage">Selected Langauge:</p>
+                   <img *ngIf="currentLanguage" [src]="currentLanguage" class="currentImg">
+                   <p *ngIf="!currentLanguage">no selected languages.</p>
+                </div>
+               
 
                 <label for="file" class="custum-file-upload">
                     <div class="icon">
