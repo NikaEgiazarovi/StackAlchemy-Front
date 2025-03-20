@@ -1,0 +1,214 @@
+body {
+    background-color: #010127;
+}
+
+.mainregistrer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.contactcontainer {
+    padding: 30px;
+    display: flex;
+    width: 700px;
+    height: 600px;
+    background-color: #4609C3;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.4s all ease;
+
+}
+
+.contactcontainer:hover {
+    box-shadow: white 0px 0px 30px 1px;
+    transform: scale(1.02);
+}
+
+.contus {
+    color: aquamarine;
+    position: relative;
+    font-size: 40px;
+    font-family: 'Chakra Petch', sans-serif;
+    width: fit-content;
+}
+
+h2 {
+    color: white;
+    position: relative;
+    font-size: 50px;
+    font-family: 'Chakra Petch', sans-serif;
+    width: fit-content;
+}
+
+.paragraph {
+    color: white;
+    position: relative;
+    font-size: 30px;
+    font-family: 'Jim Nightshade';
+    width: fit-content;
+}
+
+
+h4 {
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    width: fit-content;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    position: relative;
+    color: white;
+    font-family: cursive;
+    width: fit-content;
+}
+
+input {
+    position: relative;
+    width: 650px;
+    background-color: #370898;
+    border: none;
+    border-radius: 10px;
+    padding: 18px;
+    font-size: 18px;
+    outline: none;
+    text-align: start;
+    color: white;
+}
+
+::placeholder {
+    text-align: start;
+    font-size: 20px;
+}
+
+.messagetext {
+    width: 650px !important;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.messagetext::placeholder {
+    position: relative;
+    bottom: 50px;
+}
+
+.SUBMIT {
+    position: relative;
+    background: linear-gradient(to bottom, #F0B000,
+            #F029A0);
+    border-radius: 30px;
+    padding: 16px;
+    width: 170px;
+    transition: 0.4s;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s all ease;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.SUBMIT:hover {
+    box-shadow: 0px 0px 10px 2px white;
+}
+
+.rightLeft {
+    margin-right: 15px;
+    display: flex;
+    gap: 50px;
+}
+
+h5 {
+    color: #00FADF;
+    font-size: 30px;
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+    width: fit-content;
+}
+
+.fa-solid {
+    margin-top: 30px;
+}
+
+.fa-envelope {
+    color: #5D4FFF;
+    position: relative;
+    position: relative;
+    background-color: #271F51;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 40px;
+    transition: 0.5s all ease;
+}
+
+.fa-phone {
+    color: #5D4FFF;
+    position: relative;
+    position: relative;
+    background-color: #271F51;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 40px;
+    transition: 0.5s all ease;
+}
+
+.gameem {
+    color: #00FADF;
+    position: relative;
+    width: fit-content;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.number {
+    color: #00FADF;
+    position: relative;
+    width: fit-content;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-solid:hover {
+    background-color: #4609C3;
+    box-shadow: white 0px 0px 20px 2px;
+    cursor: pointer;
+}
+
+.maincontent {
+    display: flex;
+    gap: 195px;
+    flex-wrap: wrap;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+}
+
+.btns .fa-bars {
+    display: none;
+}
+
+.moreinfocont {
+    display: flex;
+    flex-direction: column;
+}
+
