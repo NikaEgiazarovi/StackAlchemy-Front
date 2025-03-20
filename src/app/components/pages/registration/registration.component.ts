@@ -7,17 +7,22 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
   regexUserName = /^[a-zA-Z]+$/;
   regexGmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   regexPassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/;
 
   handleLogin(event: Event) {
     event.preventDefault();
-
+    
     const userNameInput = (document.getElementById("usermainName") as HTMLInputElement)?.value;
     const userEmailInput = (document.getElementById("userGmail") as HTMLInputElement)?.value;
     const userPasswordInput = (document.getElementById("userPassword") as HTMLInputElement)?.value;
-
+    
+    console.log("Name:", userNameInput);
+    console.log("Email:", userEmailInput);
+    console.log("Password:", userPasswordInput);
+    
     if (!this.regexUserName.test(userNameInput)) {
       Swal.fire("Oops...", "There are some numbers in your name!", "error");
     } else if (!this.regexGmail.test(userEmailInput)) {

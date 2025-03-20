@@ -19,11 +19,10 @@ import { RegistrationComponent } from './components/pages/registration/registrat
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
-    RegistrationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }
