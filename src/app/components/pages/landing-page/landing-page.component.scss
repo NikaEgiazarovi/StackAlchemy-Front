@@ -146,7 +146,10 @@ swiper-slide {
 }
 
 .dropDownMenuLogo
-{ width: 40px;
+
+{
+    width: 40px;
+
     height: 40px;
     cursor: pointer;
     position: absolute;
@@ -156,7 +159,9 @@ swiper-slide {
     @media (max-width:800px) {
         display: block;
     }
-   
+
+    
+
     
 }
 .dropDownMenu-header

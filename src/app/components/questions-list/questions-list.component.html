@@ -1,15 +1,22 @@
 
 <section class="question" *ngFor="let question of Questions">
     <div class="question-stats">
-        <p>{{question.votes}} votes</p>
-        <p [ngClass]="question.answers > 0 ? 'green' : 'gray'">{{question.answers}} answers</p>
+        <p *ngIf="question.scores == 0">0 votes</p>
+        <p *ngIf="question.scores > 0">{{question.scores}} votes</p>
+        <p *ngIf="question.answers == 0" [ngClass]="question.answers > 0 ? 'green' : 'gray'">0 answers</p>
+        <p *ngIf="question.answers > 0" [ngClass]="question.answers > 0 ? 'green' : 'gray'">{{question.answers}} answers</p>
         
     </div>
     <div class="question-info">
-        <h1>{{question.text}}</h1>
-        <p class="description">{{question.description}}</p>
+        <h1>{{question.title}}</h1>
+        <div class="user-info">
+            <img src="assets/randomimg.jpg" class="user-img">
+            <p>{{question.userName}}</p>
+        </div>
         <hr>
+        
     </div>
+    
 
 </section>
 

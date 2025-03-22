@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LandingPageComponent,
     QuestionsListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
