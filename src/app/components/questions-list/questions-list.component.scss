@@ -63,3 +63,17 @@ hr{
     color: white;
     font-size: small;
 }
+.user-info
+{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+.user-img
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

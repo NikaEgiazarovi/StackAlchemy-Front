@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import {
   trigger,
@@ -7,6 +8,12 @@ import {
   animate,
 } from '@angular/animations';
 import { Router } from '@angular/router';
+
+import { Component, OnInit } from '@angular/core';
+import { trigger, style, transition, animate } from '@angular/animations';
+import { BackendServiceService } from '../../../services/backend-service.service';
+import { error } from 'console';
+
 @Component({
   standalone: false,
   selector: 'app-landing-page',
@@ -30,12 +37,27 @@ import { Router } from '@angular/router';
       ]),
     ]),
   ],
+
 })
-export class LandingPageComponent {
-  constructor(private router: Router) {}
+
+export class LandingPageComponent implements OnInit {
+  constructor(private backendService: BackendServiceService,private router: Router) {}
+  ngOnInit(): void {
+    this.backendService.getAllQuestionsRequest().subscribe(
+      (data) => {
+        this.questionsArray = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
   swiperBreakpoints = {
     1090: { slidesPerView: 3, spaceBetween: 0 },
   };
+
+  questionsArray: any = [];
 
   dropDownMenu: boolean = false;
   newestFilter: boolean = false;
@@ -46,7 +68,6 @@ export class LandingPageComponent {
     'assets/css.png',
     'assets/js.png',
     'assets/ts.png',
-    'assets/angular.png',
     'assets/scss.png',
     'assets/c_sharp.png',
   ];
@@ -81,6 +102,7 @@ export class LandingPageComponent {
         break;
     }
   }
+
 
   goToAskQuestion() {
     this.router.navigate(['askQuestion']);
@@ -192,4 +214,5 @@ export class LandingPageComponent {
       answers: 5,
     },
   ];
+
 }

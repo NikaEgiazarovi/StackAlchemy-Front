@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,14 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     BrowserAnimationsModule,
     FormsModule,
   ],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
+
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
