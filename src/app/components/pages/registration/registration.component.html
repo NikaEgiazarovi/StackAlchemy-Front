@@ -5,15 +5,15 @@
                 <h4>LEAVE YOUR MESSAGE</h4>
 
                 <label for="name">Name</label>
-                <input type="text" id="usermainName" placeholder="Enter Your Name">
+                <input type="text" id="usermainName" name="name" placeholder="Enter Your Name" [(ngModel)]="userNameInput">
 
                 <label for="Email">Email</label>
-                <input id="userGmail" type="email" placeholder="Enter Your Email">
+                <input id="userGmail" type="email" name="email" placeholder="Enter Your Email" [(ngModel)]="userEmailInput">
 
                 <label for="Message">Password</label>
-                <input class="messagetext" id="userPassword" type="password" placeholder="Enter Your Password">
+                <input class="messagetext" id="userPassword" type="password" name="password" placeholder="Enter Your Password" [(ngModel)]="userPasswordInput">
 
-                <button (click)="handleLogin($event)" class="SUBMIT">LOGIN NOW</button>
+                <button (click)="registerUserFunc(userNameInput,userEmailInput,userPasswordInput)" class="SUBMIT">Submit</button>
             </form>
         </div>
 
@@ -34,6 +34,4 @@
 
         </div>
     </div>
-    
 </section>
-
