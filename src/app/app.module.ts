@@ -10,7 +10,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +23,22 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
+    CreateQuestionPageComponent,
   ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],
+
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
