@@ -25,6 +25,7 @@ import { error } from 'console';
       ]),
     ]),
   ],
+
 })
 export class LandingPageComponent implements OnInit {
   constructor(private backendService: BackendServiceService) {}
