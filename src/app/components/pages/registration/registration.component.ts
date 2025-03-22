@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { BackendServiceService } from '../../../services/backend-service.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -8,7 +9,10 @@ import { BackendServiceService } from '../../../services/backend-service.service
   standalone: false,
 })
 export class RegistrationComponent {
-  constructor(private backendService: BackendServiceService) {}
+  constructor(
+    private backendService: BackendServiceService,
+    private authService: AuthService
+  ) {}
 
   registerUserFunc(name: string, email: string, password: string) {
     const UserDetails = {
