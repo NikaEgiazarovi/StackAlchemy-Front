@@ -42,7 +42,6 @@ export class RegistrationComponent {
 
     console.log(UserDetails);
     this.token = this.backendService.registration(UserDetails);
-    this.authService.setToken(this.token);
     console.log(this.token);
   }
 
