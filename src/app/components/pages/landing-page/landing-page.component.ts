@@ -30,14 +30,14 @@ import { error } from 'console';
 export class LandingPageComponent implements OnInit {
   constructor(private backendService: BackendServiceService) {}
   ngOnInit(): void {
-    this.backendService.getAllQuestionsRequest().subscribe(
-      (data) => {
-        this.questionsArray = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    // this.backendService.getAllQuestionsRequest().subscribe(
+    //   (data) => {
+    //     this.questionsArray = data;
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   }
   swiperBreakpoints = {
     1090: { slidesPerView: 3, spaceBetween: 0 },

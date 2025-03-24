@@ -11,6 +11,8 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './components/auth/auth.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
