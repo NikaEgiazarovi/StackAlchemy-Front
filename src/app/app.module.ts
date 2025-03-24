@@ -15,11 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/pages/login/login.component';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
-import { HttpClientModule } from '@angular/common/http';
-=======
-
-
-
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
-    registration-branch,
     RegistrationComponent,
     LoginComponent,
     CreateQuestionPageComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -39,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
+    RouterModule.forRoot([]),
   ],
 
   providers: [provideClientHydration()],
