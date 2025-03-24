@@ -14,6 +14,11 @@ import { RegistrationComponent } from './components/pages/registration/registrat
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/pages/login/login.component';
+import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
+import { HttpClientModule } from '@angular/common/http';
+=======
+
+
 
 @NgModule({
   declarations: [
@@ -22,8 +27,11 @@ import { LoginComponent } from './components/pages/login/login.component';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
+    registration-branch,
     RegistrationComponent,
     LoginComponent,
+    CreateQuestionPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     FormsModule,
     HttpClientModule,
   ],
+
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

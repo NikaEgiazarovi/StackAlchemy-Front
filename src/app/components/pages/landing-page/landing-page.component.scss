@@ -79,7 +79,7 @@
 }
 
 swiper-container {
-    width: 100%;
+    // width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +146,9 @@ swiper-slide {
 }
 
 .dropDownMenuLogo
-{ width: 40px;
+
+{
+    width: 40px;
     height: 40px;
     cursor: pointer;
     position: absolute;
@@ -156,7 +158,7 @@ swiper-slide {
     @media (max-width:800px) {
         display: block;
     }
-   
+
     
 }
 .dropDownMenu-header
@@ -310,4 +312,21 @@ app-questions-list {
 
 .clickedBtn {
     color: lightgreen;
+}
+
+.ask-question-header
+{
+    width: 89%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.ask-question-btn
+{
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3b3c46;
+    color: rgb(230, 230, 230);
 }

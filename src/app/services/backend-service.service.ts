@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 interface RegistrationResponse {
   token: string;
 }
+
 @Injectable({
   providedIn: 'root',
 })
@@ -24,5 +25,10 @@ export class BackendServiceService {
           return error;
         }
       );
+  private getAllQuestionsUrl: string =
+    'http://localhost:5135/api/Question/GetAllQuestions';
+  getAllQuestionsRequest() {
+    return this.http.get(this.getAllQuestionsUrl);
+
   }
 }
