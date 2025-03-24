@@ -14,7 +14,26 @@ export class RegistrationComponent {
     private authService: AuthService
   ) {}
 
-  registerUserFunc(name: string, email: string, password: string) {
+  registerUserFunc(name: string, email: string, password: string,event: Event) {
+    event.preventDefault();
+
+    if (!this.regexUserName.test(this.userNameInput)) {
+      Swal.fire('Oops...', 'There are some numbers in your name!', 'error');
+    } else if (!this.regexGmail.test(this.userEmailInput)) {
+      Swal.fire('Oops...', 'Invalid email address!', 'error');
+    } else if (!this.regexPassword.test(this.userPasswordInput)) {
+      Swal.fire('Oops...', 'Invalid password!', 'error');
+    } else {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: true,
+        timer: 1500,
+      }).then(() => {
+        window.location.href = './Homepage.html';
+      });
+    }
     const UserDetails = {
       Username: name,
       Email: email,
@@ -23,6 +42,7 @@ export class RegistrationComponent {
 
     console.log(UserDetails);
     this.token = this.backendService.registration(UserDetails);
+    this.authService.setToken(this.token);
     console.log(this.token);
   }
 
