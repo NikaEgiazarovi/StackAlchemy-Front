@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ace from 'ace-builds';
-
+import { BackendServiceService } from '../../../services/backend-service.service';
 import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/mode-csharp';
@@ -14,8 +14,23 @@ import 'ace-builds/src-noconflict/mode-scss';
   styleUrl: './create-question-page.component.scss',
 })
 export class CreateQuestionPageComponent implements OnInit {
+  constructor(private backendService: BackendServiceService) {}
   editor: any;
   currentLanguage: string = '';
+  code: string = '';
+  title: any;
+  description: any;
+  slides: any;
+
+  createQuestionFun(title: string, code: string, description: string) {
+    let QuestionDetails = {
+      title: title,
+      code: code,
+      description: code,
+    };
+
+    this.backendService.createQuestion(QuestionDetails);
+  }
   selectLanguage(selectedLanguage: string) {
     switch (selectedLanguage) {
       case 'assets/html.png':
@@ -70,10 +85,6 @@ export class CreateQuestionPageComponent implements OnInit {
     this.editor.setTheme('ace/theme/monokai');
     this.editor.session.setMode(`ace/mode/${this.language}`);
   }
-  code: string = 'function x() {\nconsole.log("Hello world!");\n}';
-  title: any;
-  description: any;
-  slides: any;
 
   filterImages = [
     'assets/html.png',
