@@ -1,7 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, style, transition, animate } from '@angular/animations';
+import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 import { BackendServiceService } from '../../../services/backend-service.service';
-import { error } from 'console';
+
 @Component({
   standalone: false,
   selector: 'app-landing-page',
@@ -25,10 +33,12 @@ import { error } from 'console';
       ]),
     ]),
   ],
-
 })
 export class LandingPageComponent implements OnInit {
-  constructor(private backendService: BackendServiceService) {}
+  constructor(
+    private backendService: BackendServiceService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     // this.backendService.getAllQuestionsRequest().subscribe(
     //   (data) => {
@@ -39,6 +49,7 @@ export class LandingPageComponent implements OnInit {
     //   }
     // );
   }
+
   swiperBreakpoints = {
     1090: { slidesPerView: 3, spaceBetween: 0 },
   };
@@ -87,5 +98,9 @@ export class LandingPageComponent implements OnInit {
         this.newestFilter = false;
         break;
     }
+  }
+
+  goToAskQuestion() {
+    this.router.navigate(['askQuestion']);
   }
 }
