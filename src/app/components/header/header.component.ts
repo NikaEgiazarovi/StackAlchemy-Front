@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalVariablesService } from '../../services/global-variables.service';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  constructor(public globalVariables:GlobalVariablesService){}
+  auth = this.globalVariables.auth;
+}

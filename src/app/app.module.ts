@@ -13,10 +13,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +26,12 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
+
+    AuthComponent,
     RegistrationComponent,
     LoginComponent,
     CreateQuestionPageComponent,
+
   ],
   imports: [
     BrowserModule,
