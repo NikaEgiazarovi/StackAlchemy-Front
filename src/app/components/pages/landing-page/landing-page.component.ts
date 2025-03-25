@@ -40,14 +40,14 @@ export class LandingPageComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    // this.backendService.getAllQuestionsRequest().subscribe(
-    //   (data) => {
-    //     this.questionsArray = data;
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
+    this.backendService.getAllQuestionsRequest().subscribe(
+      (data) => {
+        this.questionsArray = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   swiperBreakpoints = {

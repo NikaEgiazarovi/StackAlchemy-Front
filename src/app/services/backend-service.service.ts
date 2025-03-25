@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 
-interface RegistrationResponse {
+interface AuthResponse {
   token: string;
+  message: string;
 }
 
 @Injectable({
@@ -16,19 +17,35 @@ export class BackendServiceService {
   private getAllQuestionsUrl: string =
     'http://localhost:5135/api/Question/GetAllQuestions';
 
+  private loginUserUrl: string = 'http://localhost:5135/api/User/LoginUser';
+
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   registration(UserDetails: any) {
     return this.http
-      .post<RegistrationResponse>(this.registerUserUrl, UserDetails)
+      .post<AuthResponse>(this.registerUserUrl, UserDetails)
       .subscribe(
         (data) => {
-          this.authService.setToken(data.token);
-          return data;
+          console.log(data);
+          return data.message;
         },
         (error) => {
           console.log(error);
           return error;
+        }
+      );
+  }
+
+  login(UserDetails: any) {
+    return this.http
+      .post<AuthResponse>(this.loginUserUrl, UserDetails)
+      .subscribe(
+        (data) => {
+          this.authService.setToken(data.token);
+          return data.message;
+        },
+        (error) => {
+          console.log(error);
         }
       );
   }
