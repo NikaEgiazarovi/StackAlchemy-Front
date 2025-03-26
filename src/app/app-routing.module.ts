@@ -4,6 +4,7 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
 import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
+import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 import { authGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -14,8 +15,8 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   { path: 'registration', component: RegistrationComponent },
-  {path:'login',component:LoginComponent}
-
+  { path: 'login', component: LoginComponent },
+  { path: 'question/:id', component: QuestionPageComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 
-<section class="question" *ngFor="let question of Questions">
+<section class="question" *ngFor="let question of Questions" [routerLink]="['/question', question.id]">
     <div class="question-stats">
         <p *ngIf="question.scores == 0">0 votes</p>
         <p *ngIf="question.scores > 0">{{question.scores}} votes</p>

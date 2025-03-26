@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { GlobalVariablesService } from './global-variables.service';
 import { error } from 'console';
+import { Observable } from 'rxjs';
 
 interface AuthResponse {
   token: string;
@@ -11,7 +13,11 @@ interface CreateQuestionResponse {
   question: any;
   message: string;
 }
-
+interface QuestionResponse {
+  message: string;
+  question: any;
+  answers: [];
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -26,8 +32,25 @@ export class BackendServiceService {
 
   private createQuestionUrl: string =
     'http://localhost:5135/api/Question/CreateQuestion';
-  constructor(private http: HttpClient, private authService: AuthService) {}
 
+  private GetQuestionsAnswersUrl: string =
+    'http://localhost:5135/api/Answer/GetQuestionsAnswers';
+
+  private GetQuestionByIdUrl =
+    'http://localhost:5135/api/Question/GetQuestionById';
+
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private globalVaraiblesService: GlobalVariablesService
+  ) {}
+
+  getQuestion(questionId: number): Observable<QuestionResponse> {
+    const headers = new HttpHeaders().set('questionId', questionId.toString());
+    return this.http.get<QuestionResponse>(this.GetQuestionByIdUrl, {
+      headers,
+    });
+  }
   createQuestion(Question: any) {
     const token = this.authService.getToken();
     const headers = new HttpHeaders({

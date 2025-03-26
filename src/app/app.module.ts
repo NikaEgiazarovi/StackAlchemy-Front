@@ -18,6 +18,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,11 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     LandingPageComponent,
     QuestionsListComponent,
-
     AuthComponent,
     RegistrationComponent,
     LoginComponent,
     CreateQuestionPageComponent,
-
+    QuestionPageComponent,
   ],
   imports: [
     BrowserModule,

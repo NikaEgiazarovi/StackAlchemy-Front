@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalVariablesService {
-
-  constructor() { }
-  auth:boolean = false;
-  signIn:boolean = false;
-  signUp:boolean = false;
+  constructor() {}
+  auth: boolean = false;
+  signIn: boolean = false;
+  signUp: boolean = false;
+  QuestionResponse: any;
 }

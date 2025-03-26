@@ -61,4 +61,14 @@ app-create-question-page {
     filter: blur(5px);
   }
   
+  app-question-page
+  {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   
