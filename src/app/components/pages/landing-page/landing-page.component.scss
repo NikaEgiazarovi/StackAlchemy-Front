@@ -1,32 +1,48 @@
-.firstSect {
+main {
     position: relative;
+    top: -50px;
+    background-color: rgb(3, 9, 14);
+}
+
+.firstSect {
     width: 100%;
-    height: 800px;
+    height: 700px;
     margin: auto;
+    position: relative;
+    top: 190px;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-
-.backDots {
-    height: 800px;
-    background-color: rgb(43, 216, 131);
+.firstSect h2 {
+    font-size: 50px;
+    color: white;
 }
 
-
-.curve1 {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: auto;
+.firstSect h3 {
+    width: 600px;
+    font-size: 28px;
+    text-align: end;
+    color: white;
+    text-align: right;
+    margin-left: auto;
 }
 
+.firstSect h1 {
+    font-size: 33px;
+    color: white;
+    width: 1050px;
+    text-align: left;
+    margin-right: auto;
+}
 
 .secSect {
     width: 100%;
-    // max-width: 1440px;
-    margin-bottom: 300px;
     margin: auto;
-    background-color: rgb(31, 39, 47);
     display: flex;
     flex-direction: column;
 }
@@ -38,25 +54,25 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: relative;
 }
 
 
 .questionsTable {
-    width: 90%;
+    width: 85%;
     height: 1500px;
     background-color: rgb(22, 28, 33);
     border-radius: 20px;
-
+    transform: scale(0.9);
+    border: 1px solid white;
+    box-shadow: 0px 0px 20px 2px white;
 }
 
 .filterTable {
     width: 100%;
-    position: sticky;
-    top: 0px;
-    background-color: rgb(22, 28, 33);
+    background-color: rgb(18, 23, 27);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    
 }
 
 .innerFilterTable {
@@ -65,14 +81,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+
     @media (max-width:800px) {
         justify-content: start;
-        
+
     }
 }
 
 .swiperFilter {
     width: 20%;
+
     @media (max-width:800px) {
         display: none;
     }
@@ -85,17 +103,18 @@ swiper-container {
     justify-content: center;
 
 }
-.swiper-container
-{
+
+.swiper-container {
     @media (max-width:800px) {
         display: none;
     }
 }
-.swiper-container-mobile
-{
+
+.swiper-container-mobile {
     width: 50%;
     margin: 0;
 }
+
 swiper-slide {
     display: flex;
     align-items: center;
@@ -113,41 +132,42 @@ swiper-slide {
     padding-right: 30px;
     display: flex;
     gap: 8px;
+
     @media (max-width:800px) {
         display: none;
     }
 }
-.dropDownMenu
-{
-  position:absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  background-color: white;
-  height: auto;
-  width: 50%;
-  top: 0;
-  right: 20px;
-  border-radius: 5px;
-  padding:5px ;
-  @media (max-width:500px) {
+
+.dropDownMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: white;
     height: auto;
-    width: 97.5%;
-    top:0;
-    right: 0;
-    z-index: 999;
-  }
+    width: 50%;
+    top: 0;
+    right: 20px;
+    border-radius: 5px;
+    padding: 5px;
+
+    @media (max-width:500px) {
+        height: auto;
+        width: 97.5%;
+        top: 0;
+        right: 0;
+        z-index: 999;
+    }
 
 }
-.dropDownMenu img{
+
+.dropDownMenu img {
     width: 50px;
     height: 50px;
 }
 
-.dropDownMenuLogo
-
-{
+.dropDownMenuLogo {
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -155,37 +175,39 @@ swiper-slide {
     top: 10;
     right: 40px;
     display: none;
+
     @media (max-width:800px) {
         display: block;
     }
 
-    
+
 }
-.dropDownMenu-header
-{
+
+.dropDownMenu-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
 
     align-items: center;
 }
-.close-dropDownMenu
-{
+
+.close-dropDownMenu {
     cursor: pointer;
 }
-.dropDownMenu-section
-{
+
+.dropDownMenu-section {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 20px;
 }
-.dropDownMenu-section h3{
+
+.dropDownMenu-section h3 {
     margin: 0;
 }
-.filterBtnDropDown
-{
+
+.filterBtnDropDown {
     background: none;
     border: none;
     cursor: pointer;
@@ -201,24 +223,25 @@ swiper-slide {
     border: 2px solid black;
     border-radius: 4px;
     padding: 15px;
+
     @media (max-width:1090px) {
-        padding:10px ;
+        padding: 10px;
     }
 }
 
-.selectedLanguage
-{
+.selectedLanguage {
     margin-bottom: 30px;
 }
-.filter{
-  padding:10px;
-  width: 100px;
-  cursor: pointer;
-  background: lightgreen;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: medium;
-  
+
+.filter {
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    background: lightgreen;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: medium;
+
 }
 
 .questionMainTable {
@@ -228,19 +251,22 @@ swiper-slide {
 }
 
 
-.searchBar
-{
-  width: 400px;
-  @media (max-width:1090px) {
-    width: 250px;
-  }
-  @media (max-width:700px) {
-    width: 200px;
-  }
-  @media (max-width:600px) {
-    width: 150px;
-  }
+.searchBar {
+    width: 400px;
+
+    @media (max-width:1090px) {
+        width: 250px;
+    }
+
+    @media (max-width:700px) {
+        width: 200px;
+    }
+
+    @media (max-width:600px) {
+        width: 150px;
+    }
 }
+
 .group {
     display: flex;
     line-height: 28px;
@@ -314,19 +340,17 @@ app-questions-list {
     color: lightgreen;
 }
 
-.ask-question-header
-{
-    width: 89%;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.ask-question-btn
-{
+.ask-question-btn {
     padding: 15px;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #3b3c46;
-    color: rgb(230, 230, 230);
+    background-color: rgb(118, 237, 150);
+    color: black;
+    margin-left: auto;
+    box-shadow: 0px 0px 35px 1px rgb(118, 237, 150);
+    border: 3px solid black;
+}
+
+.ask-question-btn:active {
+    transform: scale(0.9);
 }
