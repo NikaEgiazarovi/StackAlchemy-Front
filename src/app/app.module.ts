@@ -19,7 +19,7 @@ import { CreateQuestionPageComponent } from './components/pages/create-question-
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,11 @@ import { QuestionPageComponent } from './components/pages/question-page/question
     HttpClientModule,
     CommonModule,
     RouterModule.forRoot([]),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
 
   providers: [provideClientHydration()],

@@ -8,9 +8,10 @@
             <a href="">About Us</a>
         </div>
 
-        <div class="socialLinksRegistration">
+        <div *ngIf="!token" class="socialLinksRegistration">
             <h2 (click)="this.globalVariables.auth = !this.globalVariables.auth">SignUp/ SingIn</h2>
         </div>
+        <button class="logout-btn" *ngIf="token" (click)="deleteCookies()">Logout</button>
     </nav>
 </header>
 

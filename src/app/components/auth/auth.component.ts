@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendServiceService } from '../../services/backend-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-auth',

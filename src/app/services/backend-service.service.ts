@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { GlobalVariablesService } from './global-variables.service';
 import { error } from 'console';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 interface AuthResponse {
   token: string;
@@ -42,7 +43,8 @@ export class BackendServiceService {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private globalVaraiblesService: GlobalVariablesService
+    private globalVaraiblesService: GlobalVariablesService,
+    private toastr: ToastrService
   ) {}
 
   getQuestion(questionId: number): Observable<QuestionResponse> {
@@ -64,9 +66,11 @@ export class BackendServiceService {
       .subscribe(
         (data) => {
           console.log(data);
+          this.toastr.success(`${data.message}`, 'Success');
           return data.message;
         },
         (error) => {
+          this.toastr.error(`${error}`, 'Error');
           console.log(error);
         }
       );
@@ -78,10 +82,15 @@ export class BackendServiceService {
       .subscribe(
         (data) => {
           console.log(data);
+          this.toastr.success(`${data.message}`, 'Success');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
           return data.message;
         },
         (error) => {
           console.log(error);
+          this.toastr.error(`${error.error.mesage}`, 'Error');
           return error;
         }
       );
@@ -93,9 +102,14 @@ export class BackendServiceService {
       .subscribe(
         (data) => {
           this.authService.setToken(data.token);
+          this.toastr.success(`${data.message}`, 'Success');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
           return data.message;
         },
         (error) => {
+          this.toastr.error(`${error.error.message}`, 'Error');
           console.log(error);
         }
       );
