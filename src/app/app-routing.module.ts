@@ -22,7 +22,11 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent, canActivate: [authGuard] },
   { path: 'question/:id', component: QuestionPageComponent },
-  { path: 'createAnswer/:questionId', component: CreateAnswerComponent },
+  {
+    path: 'createAnswer/:questionId',
+    component: CreateAnswerComponent,
+    canActivate: [createQuestionGuard],
+  },
 ];
 
 @NgModule({

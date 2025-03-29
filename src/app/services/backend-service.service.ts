@@ -14,6 +14,11 @@ interface CreateQuestionResponse {
   question: any;
   message: string;
 }
+
+interface CreateAnswerResponse {
+  question: any;
+  message: string;
+}
 interface QuestionResponse {
   message: string;
   question: any;
@@ -61,15 +66,21 @@ export class BackendServiceService {
       'Content-Type': 'application/json',
     });
     return this.http
-      .post('http://localhost:5135/api/Answer/CreateAnswer', Answer, {
-        headers,
-      })
+      .post<CreateAnswerResponse>(
+        'http://localhost:5135/api/Answer/CreateAnswer',
+        Answer,
+        {
+          headers,
+        }
+      )
       .subscribe(
         (data) => {
+          this.toastr.success(`${data.message}`, 'Success');
           console.log(data);
           return data;
         },
         (error) => {
+          this.toastr.error(`${error.error.title}`, 'Error');
           console.log(error);
           return error;
         }
@@ -92,7 +103,7 @@ export class BackendServiceService {
           return data.message;
         },
         (error) => {
-          this.toastr.error(`${error}`, 'Error');
+          this.toastr.error(`${error.error.title}`, 'Error');
           console.log(error);
         }
       );

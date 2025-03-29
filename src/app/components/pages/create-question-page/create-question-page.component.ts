@@ -26,7 +26,7 @@ export class CreateQuestionPageComponent implements OnInit {
     let QuestionDetails = {
       title: title,
       code: code,
-      description: code,
+      description: description,
     };
 
     this.backendService.createQuestion(QuestionDetails);
@@ -84,6 +84,9 @@ export class CreateQuestionPageComponent implements OnInit {
     this.editor = ace.edit('editor');
     this.editor.setTheme('ace/theme/monokai');
     this.editor.session.setMode(`ace/mode/${this.language}`);
+    this.editor.on('change', () => {
+      this.code = this.editor.getValue();
+    });
   }
 
   filterImages = [
