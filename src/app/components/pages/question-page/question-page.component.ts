@@ -22,7 +22,8 @@ export class QuestionPageComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   questionId!: number;
-  editor: any;
+  QuestionEditor: any;
+  AnswerEditors: any = [];
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.questionId = Number(params.get('id'));
@@ -49,14 +50,29 @@ export class QuestionPageComponent implements OnInit {
   }
 
   private initializeEditor(): void {
-    this.editor = ace.edit('editor');
-    this.editor.setTheme('ace/theme/monokai');
-    this.editor.session.setMode('ace/mode/javascript');
+    setTimeout(() => {
+      this.QuestionEditor = ace.edit('QuestionEditor');
+      this.QuestionEditor.setTheme('ace/theme/monokai');
+      this.QuestionEditor.session.setMode('ace/mode/javascript');
+      this.QuestionEditor.setReadOnly(true);
 
-    if (this.globalVaraiblesService.QuestionResponse?.question?.code) {
-      this.editor.setValue(
-        this.globalVaraiblesService.QuestionResponse.question.code
-      );
-    }
+      if (this.globalVaraiblesService.QuestionResponse?.question?.code) {
+        this.QuestionEditor.setValue(
+          this.globalVaraiblesService.QuestionResponse.question.code
+        );
+      }
+
+      this.AnswerEditors =
+        this.globalVaraiblesService.QuestionResponse?.question?.answers.map(
+          (answer: { code: string }, index: number) => {
+            const editor = ace.edit(`answerEditor${index}`);
+            editor.setTheme('ace/theme/monokai');
+            editor.session.setMode('ace/mode/javascript');
+            editor.setReadOnly(true);
+            editor.setValue(answer.code || '');
+            return editor;
+          }
+        );
+    }, 0);
   }
 }

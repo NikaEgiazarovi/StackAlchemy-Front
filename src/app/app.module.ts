@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CreateAnswerComponent } from './components/pages/create-answer/create-answer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     CreateQuestionPageComponent,
     QuestionPageComponent,
+    CreateAnswerComponent,
   ],
   imports: [
     BrowserModule,

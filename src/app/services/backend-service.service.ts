@@ -53,6 +53,28 @@ export class BackendServiceService {
       headers,
     });
   }
+
+  createAnswer(Answer: any) {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+    return this.http
+      .post('http://localhost:5135/api/Answer/CreateAnswer', Answer, {
+        headers,
+      })
+      .subscribe(
+        (data) => {
+          console.log(data);
+          return data;
+        },
+        (error) => {
+          console.log(error);
+          return error;
+        }
+      );
+  }
   createQuestion(Question: any) {
     const token = this.authService.getToken();
     const headers = new HttpHeaders({

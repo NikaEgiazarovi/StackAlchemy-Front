@@ -1,15 +1,17 @@
-<section class="qeustion">
-    <!-- <h1 class="question-title">{{ globalVaraiblesService.QuestionResponse?.question?.title }}</h1> -->
-    <!-- <p class="question-description">{{ globalVaraiblesService.QuestionResponse?.question?.description }}</p> -->
-    <h1 class="question-title">ragaca ragaca blablabla blablabla</h1>
-    <p class="question-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, commodi architecto
-        minus cumque aut tempora ullam esse! Error, nesciunt. Molestiae iure asperiores nisi sapiente repellendus
-        inventore esse in architecto quasi?</p>
-
-    <div id="editor" style="height: 300px; width: 92%; border-radius: 10px;"></div>
+<section class="create-answer-container">
+    <button class="create-answer-btn"  [routerLink]="['/createAnswer', questionId]">Create Answer</button>
 </section>
-<!-- 
-<section *ngFor="let answer of this.globalVaraiblesService.QuestionResponse.question.answers">
-    <h1>{{answer.title}}</h1>
-    <p>{{answer.description}}</p>
-</section> -->
+<section class="question">
+    <h1 class="question-title">{{ globalVaraiblesService.QuestionResponse?.question?.title }}</h1>
+    <p class="question-description">{{ globalVaraiblesService.QuestionResponse?.question?.description }}</p>
+    <div id="QuestionEditor" style="height: 300px; width: 92%; border-radius: 10px;"></div>
+</section>
+<h1>Answers:</h1>
+
+<section  class="answers-container">
+    <section *ngFor="let answer of this.globalVaraiblesService.QuestionResponse.question.answers; let i = index" class="answer">
+      <h1>{{answer.title}}</h1>
+      <p>{{answer.description}}</p>
+      <div [id]="'answerEditor' + i"  style="height: 300px; width: 92%; border-radius: 10px;"></div>
+    </section>
+</section>

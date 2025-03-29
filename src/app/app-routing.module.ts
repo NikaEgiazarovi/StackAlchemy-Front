@@ -7,6 +7,7 @@ import { CreateQuestionPageComponent } from './components/pages/create-question-
 import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 import { authGuard } from './guards/auth.guard';
 import { createQuestionGuard } from './guards/create-question.guard';
+import { CreateAnswerComponent } from './components/pages/create-answer/create-answer.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent, canActivate: [authGuard] },
   { path: 'question/:id', component: QuestionPageComponent },
+  { path: 'createAnswer/:questionId', component: CreateAnswerComponent },
 ];
 
 @NgModule({

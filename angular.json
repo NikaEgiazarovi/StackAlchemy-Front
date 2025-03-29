@@ -36,6 +36,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/ace"
+
             ],
             "styles": [
               "src/styles.scss",
@@ -98,6 +99,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/ace"
+
             ],
             "styles": [
               "src/styles.scss",
