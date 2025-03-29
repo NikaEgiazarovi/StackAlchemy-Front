@@ -61,6 +61,12 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 6px;
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+
+.socialLinksRegistration h2:active {
+    transform: scale(0.9);
 }
 
 .Logo img {
