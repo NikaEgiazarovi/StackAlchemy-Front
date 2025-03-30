@@ -1,21 +1,21 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wdth,wght@71.2,641&display=swap"
+    rel="stylesheet">
+
 <header>
     <nav>
         <div class="Logo"><img src="assets/331f3df9-026f-4d14-886b-bafe0c6d2a5d.png" alt="Website Logo"></div>
 
         <div class="navigationLinks">
-            <a href="">Q&A</a>
-            <a href="">News</a>
-            <a href="">About Us</a>
+            <a href="">შეკითხვები</a>
+            <a href="">სიახლეები</a>
+            <a href="">ჩვენს შესახებ</a>
         </div>
 
         <div *ngIf="!token" class="socialLinksRegistration">
-            <h2 (click)="this.globalVariables.auth = !this.globalVariables.auth">SignUp/ SingIn</h2>
+            <h2 (click)="this.globalVariables.auth = !this.globalVariables.auth">რეგისტრაცია</h2>
         </div>
         <button class="logout-btn" *ngIf="token" (click)="deleteCookies()">Logout</button>
     </nav>
 </header>
-
-
-
-
-
