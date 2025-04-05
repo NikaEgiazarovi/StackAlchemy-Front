@@ -116,9 +116,6 @@ export class BackendServiceService {
         (data) => {
           console.log(data);
           this.toastr.success(`${data.message}`, 'Success');
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
           return data.message;
         },
         (error) => {

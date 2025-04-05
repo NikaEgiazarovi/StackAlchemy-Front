@@ -10,11 +10,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './components/auth/auth.component';
-import { LoginComponent } from './components/pages/login/login.component';
+
 import { CreateQuestionPageComponent } from './components/pages/create-question-page/create-question-page.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -29,8 +28,6 @@ import { CreateAnswerComponent } from './components/pages/create-answer/create-a
     LandingPageComponent,
     QuestionsListComponent,
     AuthComponent,
-    RegistrationComponent,
-    LoginComponent,
     CreateQuestionPageComponent,
     QuestionPageComponent,
     CreateAnswerComponent,
