@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BackendServiceService } from '../../../services/backend-service.service';
 import { GlobalVariablesService } from '../../../services/global-variables.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 import * as ace from 'ace-builds';
 import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/mode-javascript';
@@ -19,11 +20,13 @@ export class QuestionPageComponent implements OnInit {
   constructor(
     private backendService: BackendServiceService,
     public globalVaraiblesService: GlobalVariablesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService:AuthService
   ) {}
   questionId!: number;
   QuestionEditor: any;
   AnswerEditors: any = [];
+  token:string | null = ''
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.questionId = Number(params.get('id'));
@@ -33,6 +36,17 @@ export class QuestionPageComponent implements OnInit {
       'basePath',
       'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/'
     );
+  }
+
+  deleteAnswerFunc(answerId:number)
+  {
+     this.token = this.authService.getToken()
+    let DeleteAnswerObject = {
+      token: this.token,
+      AnswerId:answerId
+    }
+
+    this.backendService.deleteQuestion(DeleteAnswerObject)
   }
 
   private fetchQuestion(): void {

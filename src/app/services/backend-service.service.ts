@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { GlobalVariablesService } from './global-variables.service';
 import { error } from 'console';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { Token } from '@angular/compiler';
 
 interface AuthResponse {
   token: string;
@@ -24,10 +25,21 @@ interface QuestionResponse {
   question: any;
   answers: [];
 }
+
+interface DeleteAnswerResponse
+{
+  message:string;
+}
+
+interface GetUserByIdResponse
+{
+  username:string;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class BackendServiceService {
+   
   private registerUserUrl: string =
     'http://localhost:5135/api/User/RegisterUser';
 
@@ -45,12 +57,51 @@ export class BackendServiceService {
   private GetQuestionByIdUrl =
     'http://localhost:5135/api/Question/GetQuestionById';
 
+    private DeleteAnswerUrl = "http://localhost:5135/api/Answer/DeleteAnswer"
+    
+
   constructor(
     private http: HttpClient,
     private authService: AuthService,
     private globalVaraiblesService: GlobalVariablesService,
     private toastr: ToastrService
   ) {}
+
+  getUsername(token:string | null)
+  {
+    if(token == null)
+    {
+      console.log("token is null")
+      return;
+    }
+     let GetUserByIdUrl = `http://localhost:5135/api/User/GetUserById?token=${token}`
+     return this.http.get<GetUserByIdResponse>(GetUserByIdUrl).subscribe((data)=>
+    {
+      this.globalVaraiblesService.Username = data.username
+    },
+  (error)=>
+  {
+    console.log(error)
+  })
+  }
+  deleteQuestion(deleteAnswerObject:any)
+  {
+    return this.http.delete<DeleteAnswerResponse>(this.DeleteAnswerUrl, {
+      body: deleteAnswerObject 
+    }).subscribe(
+      (data) => {
+        this.toastr.success(`${data.message}`, 'Success');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+        return data
+      },
+      (error) => {
+        this.toastr.error(`${error.error.message}`, 'Error');
+        return error
+      }
+    );
+  }
 
   getQuestion(questionId: number): Observable<QuestionResponse> {
     const headers = new HttpHeaders().set('questionId', questionId.toString());

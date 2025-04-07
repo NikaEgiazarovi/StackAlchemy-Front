@@ -9,4 +9,5 @@ export class GlobalVariablesService {
   signIn: boolean = false;
   signUp: boolean = false;
   QuestionResponse: any;
+  Username:string = ''
 }

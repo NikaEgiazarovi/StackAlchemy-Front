@@ -17,5 +17,6 @@
             <h2 (click)="this.globalVariables.auth = !this.globalVariables.auth">რეგისტრაცია</h2>
         </div>
         <button class="logout-btn" *ngIf="token" (click)="deleteCookies()">Logout</button>
+        <p class="username">{{globalVar.Username}}</p>
     </nav>
 </header>

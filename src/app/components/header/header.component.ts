@@ -3,6 +3,7 @@ import { GlobalVariablesService } from '../../services/global-variables.service'
 import { AuthService } from '../../services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
+import { BackendServiceService } from '../../services/backend-service.service';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +16,14 @@ export class HeaderComponent implements OnInit {
     public globalVariables: GlobalVariablesService,
     private authService: AuthService,
     private cookieService: CookieService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public globalVar:GlobalVariablesService,
+    private backendService:BackendServiceService
   ) {}
   token: string | null = null;
   ngOnInit(): void {
     this.token = this.authService.getToken();
+    this.backendService.getUsername(this.token)
   }
   deleteCookies() {
     this.cookieService.delete('token');
