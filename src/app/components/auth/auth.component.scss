@@ -6,7 +6,7 @@
   --bg-color-alt: #666;
   --main-color: #323232;
     transform: scale(1.2);
-    
+    margin-top: 220px;
 }
 /* switch card */
 .switch {
@@ -23,7 +23,7 @@
 
 .card-side::before {
   position: absolute;
-  content: 'Log in';
+  content: 'შესვლა';
   left: -70px;
   top: 0;
   width: 100px;
@@ -34,7 +34,7 @@
 
 .card-side::after {
   position: absolute;
-  content: 'Sign up';
+  content: 'შექმნა';
   left: 70px;
   top: 0;
   width: 100px;

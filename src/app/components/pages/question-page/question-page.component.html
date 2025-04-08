@@ -1,19 +1,38 @@
-<section class="create-answer-container">
-    <button class="create-answer-btn"  [routerLink]="['/createAnswer', questionId]">Create Answer</button>
-</section>
-<section class="question">
-    <h1 class="question-title">{{ globalVaraiblesService.QuestionResponse?.question?.title }}</h1>
-    <p class="question-description">{{ globalVaraiblesService.QuestionResponse?.question?.description }}</p>
-    <div id="QuestionEditor" style="height: 300px; width: 92%; border-radius: 10px;"></div>
-</section>
-<h1>Answers:</h1>
+<section class="theMain">
 
-<section  class="answers-container">
-    <section *ngFor="let answer of this.globalVaraiblesService.QuestionResponse.question.answers; let i = index" class="answer">
-      <h1>{{answer.title}}</h1>
-      <button (click)="deleteAnswerFunc(answer.id)">Delete Answer</button>
-      <p>{{answer.description}}</p>
-      <p>User: {{answer.user.username}}</p>
-      <div  [id]="'answerEditor' + i"  style="height: 300px; width: 92%; border-radius: 10px;"></div>
+    <section class="create-answer-container">
+        <button class="create-answer-btn" [routerLink]="['/createAnswer', questionId]">Create Answer</button>
     </section>
+    
+    <section class="question">
+        <div class="questionInfo">
+            <h1 class="question-title">{{ globalVaraiblesService.QuestionResponse?.question?.title }}</h1>
+            <p class="question-description">{{ globalVaraiblesService.QuestionResponse?.question?.description }}</p>
+        </div>
+        <div id="QuestionEditor" style="height: 300px; width: 92%; border-radius: 10px;"></div>
+    </section>
+    
+    <h1>Answers:</h1>
+
+    <section class="answers-container">
+        <section *ngFor="let answer of this.globalVaraiblesService.QuestionResponse.question.answers; let i = index"
+            class="answer">
+
+            <div class="answerInfo">
+                <h1>{{answer.title}}</h1>
+                <p>{{answer.description}}</p>
+
+                <div class="deleteBtnFlex">
+                    <img src="assets/userPngPhoto.png" class="user-img" style="width: 30px;">
+                    <p>: {{answer.user.username}}</p>
+                    <span (click)="deleteAnswerFunc(answer.id)"
+                        style="text-align: center; font-size: 25px; cursor: pointer; ">🗑</span>
+                </div>
+
+            </div>
+
+            <div [id]="'answerEditor' + i" style="height: 300px; width: 92%; border-radius: 10px;"></div>
+        </section>
+    </section>
+
 </section>

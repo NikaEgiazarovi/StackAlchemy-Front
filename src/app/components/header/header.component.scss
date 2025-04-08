@@ -31,6 +31,11 @@ nav {
     font-family: "Noto Serif Georgian", serif;
     font-optical-sizing: auto;
     font-weight: 740;
+    transition: 0.3s all ease;
+}
+
+.navigationLinks a:active {
+    transform: scale(0.9);
 }
 
 .navigationLinks a::after {
@@ -82,6 +87,11 @@ nav {
     max-width: 80px;
     height: auto;
     padding-top: 8px;
+    transition: 0.3s all ease;
+}
+
+.Logo img:active {
+    transform: scale(0.9);
 }
 
 .firstSect {
@@ -157,6 +167,7 @@ nav {
     padding: 15px;
     cursor: pointer;
     border: 1px solid black;
+    font-family: "Noto Serif Georgian", serif;
 }
 
 .username

@@ -5,8 +5,12 @@
 
 <header>
     <nav>
-        <div class="Logo"><img src="assets/331f3df9-026f-4d14-886b-bafe0c6d2a5d.png" alt="Website Logo"></div>
-
+        <div class="Logo">
+            <a routerLink="/">
+                <img src="assets/331f3df9-026f-4d14-886b-bafe0c6d2a5d.png" alt="Website Logo">
+            </a>
+        </div>
+        
         <div class="navigationLinks">
             <a href="">შეკითხვები</a>
             <a href="">სიახლეები</a>
@@ -16,7 +20,10 @@
         <div *ngIf="!token" class="socialLinksRegistration">
             <h2 (click)="this.globalVariables.auth = !this.globalVariables.auth">რეგისტრაცია</h2>
         </div>
-        <button class="logout-btn" *ngIf="token" (click)="deleteCookies()">Logout</button>
-        <p class="username">{{globalVar.Username}}</p>
+
+        <div class="UserSide" style="display: flex; gap: 40px;">
+            <p class="username">{{globalVar.Username}}</p>
+            <button class="logout-btn" *ngIf="token" (click)="deleteCookies()">გამოსვლა</button>
+        </div>
     </nav>
 </header>

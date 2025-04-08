@@ -1,16 +1,18 @@
 <main>
     <section class="firstSect">
-        <h2>პასუხები თქვენს შეკითხვებზე შეგიძლიათ მოიძიოთ <br> <span style="color: rgb(118, 237, 150);">&#123; ჩვენს საიტზე &#125;</span> </h2>
-        <h3>თუ თქვენს კითხვაზე პასუხი ვერ იპოვნეთ შეგიძლიათ შექმნათ <span style="color: rgb(118, 237, 150);">&#123; ახალი კითხვა &#125;</span> </h3>
+        <h2>პასუხები თქვენს შეკითხვებზე შეგიძლიათ მოიძიოთ <br> <span style="color: rgb(118, 237, 150);">&#123; ჩვენს
+                საიტზე &#125;</span> </h2>
+        <h3>თუ თქვენს კითხვაზე პასუხი ვერ იპოვნეთ შეგიძლიათ შექმნათ <span style="color: rgb(118, 237, 150);">&#123;
+                ახალი კითხვა &#125;</span> </h3>
         <button class="ask-question-btn" (click)="goToAskQuestion()">ახალი შეკითხვა</button>
-        <h1>გაქვს საკმარისი გამოცდილება კოდირებასთან დაკავშირებით? მაშინ შეგიძლიათ კითხვებს გასცეთ პასუხი და თქვენი წვლილი შეიტანოთ ქართველი დამწყები დეველოპერების <br> <span style="color: rgb(118, 237, 150);">&#123; განვითარებაში &#125;</span> </h1>
+        <h1>გაქვს საკმარისი გამოცდილება კოდირებასთან დაკავშირებით? მაშინ შეგიძლიათ კითხვებს გასცეთ პასუხი და თქვენი
+            წვლილი შეიტანოთ ქართველი დამწყები დეველოპერების <br> <span style="color: rgb(118, 237, 150);">&#123;
+                განვითარებაში &#125;</span> </h1>
         <hr style="width: 100%;">
-    </section>
- 
+    </section> 
+
     <section class="secSect">
         <div class="mainSection">
-            <header class="ask-question-header">
-            </header>
             <div class="questionsTable">
                 <div class="filterTable">
                     <div class="innerFilterTable">
@@ -89,7 +91,6 @@
 
                 <div class="questionMainTable">
                     <app-questions-list [Questions]="questionsArray"></app-questions-list>
-
                 </div>
             </div>
         </div>

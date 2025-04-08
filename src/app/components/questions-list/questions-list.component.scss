@@ -1,20 +1,21 @@
-section
-{
+section {
     color: white;
-    
+
 }
-h1{
+
+h1 {
     font-weight: bold;
     font-size: x-large;
     color: lightblue;
     cursor: pointer;
 }
-hr{
+
+hr {
     width: 97%;
-    
+
 }
-.question
-{
+
+.question {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,8 +23,8 @@ hr{
     gap: 20px;
 }
 
-.question-info
-{
+.question-info {
+    width: 1070px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -31,48 +32,54 @@ hr{
     padding: 5px;
     line-height: 1.6;
 }
-.question-info h1{
+
+.question-info h1, h3 {
     margin: 0;
 }
-.question-info p
-{
+
+.question-info p {
     margin: 0;
 }
-.question-stats
-{
+
+.question-info hr {
+    margin-left: 0;
+}
+
+.question-stats {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
-.question-stats p{
+
+.question-stats p {
     margin: 0;
 }
-.green
-{
+
+.green {
     color: lightgreen;
 
 }
-.gray
-{
+
+.gray {
     color: gray;
 }
-.description
-{
+
+.description {
     color: white;
     font-size: small;
 }
-.user-info
-{
+
+.user-info {
     width: 98%;
     display: flex;
     align-items: center;
     justify-content: end;
     gap: 10px;
 }
-.user-img
-{
+
+.user-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;

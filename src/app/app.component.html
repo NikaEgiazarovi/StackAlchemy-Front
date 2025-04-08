@@ -1,9 +1,11 @@
+<div class="theMainClassOfTheProject">
+  <app-header></app-header>
 
-<app-header ></app-header>
-<div [ngClass]="this.globalVariables.auth ? 'blur' : ''">
-    <router-outlet />
+  <div class="router-wrapper" [ngClass]="this.globalVariables.auth ? 'blur' : ''">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-auth *ngIf="this.globalVariables.auth"></app-auth>
+
+  <app-footer></app-footer>
 </div>
-<app-auth *ngIf="this.globalVariables.auth"></app-auth>
-
-<app-footer  *ngIf="shouldShowFooter()" [ngClass]="this.globalVariables.auth ? 'blur' : ''"></app-footer>
-
