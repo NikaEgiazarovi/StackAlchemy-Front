@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { GlobalVariablesService } from './global-variables.service';
 import { error } from 'console';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Token } from '@angular/compiler';
+
+interface SearchQuestionResponse {
+  message: string;
+  questions: any[];
+}
 
 interface AuthResponse {
   token: string;
@@ -26,20 +35,17 @@ interface QuestionResponse {
   answers: [];
 }
 
-interface DeleteAnswerResponse
-{
-  message:string;
+interface DeleteAnswerResponse {
+  message: string;
 }
 
-interface GetUserByIdResponse
-{
-  username:string;
+interface GetUserByIdResponse {
+  username: string;
 }
 @Injectable({
   providedIn: 'root',
 })
 export class BackendServiceService {
-   
   private registerUserUrl: string =
     'http://localhost:5135/api/User/RegisterUser';
 
@@ -57,8 +63,7 @@ export class BackendServiceService {
   private GetQuestionByIdUrl =
     'http://localhost:5135/api/Question/GetQuestionById';
 
-    private DeleteAnswerUrl = "http://localhost:5135/api/Answer/DeleteAnswer"
-    
+  private DeleteAnswerUrl = 'http://localhost:5135/api/Answer/DeleteAnswer';
 
   constructor(
     private http: HttpClient,
@@ -67,40 +72,44 @@ export class BackendServiceService {
     private toastr: ToastrService
   ) {}
 
-  getUsername(token:string | null)
-  {
-    if(token == null)
-    {
-      console.log("token is null")
+  searchQuestion(searchQuery: string) {
+    const SearchQuestionUrl = `http://localhost:5135/api/Question/SearchQuestion?searchQuery=${searchQuery}`;
+    return this.http.get<SearchQuestionResponse>(SearchQuestionUrl);
+  }
+
+  getUsername(token: string | null) {
+    if (token == null) {
+      console.log('token is null');
       return;
     }
-     let GetUserByIdUrl = `http://localhost:5135/api/User/GetUserById?token=${token}`
-     return this.http.get<GetUserByIdResponse>(GetUserByIdUrl).subscribe((data)=>
-    {
-      this.globalVaraiblesService.Username = data.username
-    },
-  (error)=>
-  {
-    console.log(error)
-  })
-  }
-  deleteQuestion(deleteAnswerObject:any)
-  {
-    return this.http.delete<DeleteAnswerResponse>(this.DeleteAnswerUrl, {
-      body: deleteAnswerObject 
-    }).subscribe(
+    let GetUserByIdUrl = `http://localhost:5135/api/User/GetUserById?token=${token}`;
+    return this.http.get<GetUserByIdResponse>(GetUserByIdUrl).subscribe(
       (data) => {
-        this.toastr.success(`${data.message}`, 'Success');
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-        return data
+        this.globalVaraiblesService.Username = data.username;
       },
       (error) => {
-        this.toastr.error(`${error.error.message}`, 'Error');
-        return error
+        console.log(error);
       }
     );
+  }
+  deleteQuestion(deleteAnswerObject: any) {
+    return this.http
+      .delete<DeleteAnswerResponse>(this.DeleteAnswerUrl, {
+        body: deleteAnswerObject,
+      })
+      .subscribe(
+        (data) => {
+          this.toastr.success(`${data.message}`, 'Success');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+          return data;
+        },
+        (error) => {
+          this.toastr.error(`${error.error.message}`, 'Error');
+          return error;
+        }
+      );
   }
 
   getQuestion(questionId: number): Observable<QuestionResponse> {

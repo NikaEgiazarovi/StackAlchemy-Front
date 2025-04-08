@@ -36,7 +36,7 @@
                                 </svg>
 
                                 <input id="query" class="input" type="search" placeholder="Search..."
-                                    name="searchbar" />
+                                    name="searchbar" [(ngModel)]="searchQuery" (keydown.enter)="searchQuestionFunc(searchQuery)"/>
                             </div>
 
                         </div>

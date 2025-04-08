@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { BackendServiceService } from '../../../services/backend-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   standalone: false,
@@ -37,7 +38,8 @@ import { BackendServiceService } from '../../../services/backend-service.service
 export class LandingPageComponent implements OnInit {
   constructor(
     private backendService: BackendServiceService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
   ngOnInit(): void {
     this.backendService.getAllQuestionsRequest().subscribe(
@@ -55,7 +57,7 @@ export class LandingPageComponent implements OnInit {
   };
 
   questionsArray: any = [];
-
+  searchQuery: string = '';
   dropDownMenu: boolean = false;
   newestFilter: boolean = false;
   scoresFilter: boolean = false;
@@ -70,6 +72,19 @@ export class LandingPageComponent implements OnInit {
   ];
   selectedLanguage: string = '';
 
+  searchQuestionFunc(searchQuery: string) {
+    this.backendService.searchQuestion(searchQuery).subscribe(
+      (data) => {
+        console.log(data);
+        this.toastr.success(`${data.message}`, 'Success');
+        this.questionsArray = data.questions;
+      },
+      (error) => {
+        this.toastr.error(`${error.error.message}`, 'Error');
+        return error;
+      }
+    );
+  }
   selectLanguage(language: string) {
     this.selectedLanguage = language;
   }
